@@ -1,6 +1,6 @@
 # Web Game Creator
 
-A Codex plugin starter for building browser games. This repository currently bundles a PlayCanvas + TypeScript + Vite game template, the `poki-sdk` and `levelry-mcp` skills, and a Levelry MCP connection. Game design, asset, UI, and pipeline skills can be added later.
+A Codex plugin starter for building browser games. This repository currently bundles a PlayCanvas + TypeScript + Vite game template, the `game-pipeline`, `poki-sdk`, and `levelry-mcp` skills, and a Levelry MCP connection. More design, asset, and UI guidance can be added later.
 
 ## Install in Codex
 
@@ -19,7 +19,7 @@ The Levelry MCP endpoint is declared in the plugin's `mcp.json`. The connection 
 
 Copy `plugins/web-game-creator/assets/project-template/` to a new project directory, then follow its `README.md`. Keep the copied `AGENTS.md` with the new game so Codex can use the template's architecture and verification rules. The template is a standalone project with separate local, Poki, and Yoola builds.
 
-The plugin currently includes only the two requested skills. It does not automatically create game projects or publish games to a portal.
+The pipeline skill distinguishes proof of concept, full game production, and polish so work stays appropriate to the game's current stage. The plugin does not automatically create game projects or publish games to a portal.
 
 ## Repository layout
 
@@ -27,7 +27,7 @@ The plugin currently includes only the two requested skills. It does not automat
 .agents/plugins/marketplace.json       Codex marketplace entry
 plugins/web-game-creator/plugin.json   Plugin identity and display metadata
 plugins/web-game-creator/mcp.json      Levelry MCP endpoint
-plugins/web-game-creator/skills/       Poki SDK and Levelry canvas guidance
+plugins/web-game-creator/skills/       Pipeline, Poki SDK, and Levelry guidance
 plugins/web-game-creator/assets/       Copyable game template
 references/                             Future reference material
 data/                                   Future project data
