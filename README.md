@@ -33,7 +33,7 @@ The Levelry MCP endpoint is declared in the plugin's `mcp.json`. The connection 
 
 ## Start a game from the template
 
-Open an empty directory as a Codex project and ask: "Use `$game-init` to initialize a new game here." Codex copies the template bundled with the installed plugin, names the new project, installs dependencies, and checks it. No separate template download or repository clone is needed.
+Open an empty directory as a Codex project and ask: "Use `$game-init` to initialize a new game here." The skill directs Codex to copy the template bundled with the installed plugin, name the new project, install dependencies, and check it through normal tool calls. No separate template download or repository clone is needed.
 
 You can also copy `plugins/web-game-creator/assets/project-template/` manually to a new project directory and follow its `README.md`. Keep the copied `AGENTS.md` so Codex can use the template's architecture and verification rules. The template is a standalone project with separate local, Poki, and Yoola builds.
 
