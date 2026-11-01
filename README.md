@@ -11,7 +11,23 @@ codex plugin add web-game-creator@web-game-creator
 
 The GitHub repository is public; clients do not need repository-specific GitHub access.
 
-The marketplace can also be opened from the Codex plugin directory after adding this repository as a source. Refresh the marketplace after future updates with `codex plugin marketplace upgrade web-game-creator`.
+The marketplace can also be opened from the Codex plugin directory after adding this repository as a source.
+
+## Update
+
+If the marketplace was added directly from GitHub, refresh its Git snapshot and start a new Codex chat (or restart the desktop app):
+
+```sh
+codex plugin marketplace upgrade web-game-creator
+```
+
+If the marketplace was added from a local clone, pull that clone instead, then restart the desktop app so it refreshes the installed local plugin:
+
+```sh
+git -C /path/to/web-game-creator pull
+```
+
+Use `codex plugin marketplace list` if you are unsure which source was configured. An existing game copied from `assets/project-template/` is independent of the plugin: new games can use the latest snapshot, while existing games need deliberate porting of relevant template changes.
 
 The Levelry MCP endpoint is declared in the plugin's `mcp.json`. The connection does not include credentials; complete any authentication requested by your Codex client. Installing the plugin does not create or change a Levelry project.
 
