@@ -1,0 +1,4 @@
+interface:
+  display_name: "Poki SDK"
+  short_description: "Integrate Poki lifecycle, ads and release builds"
+  default_prompt: "Use $poki-sdk to integrate Poki into this game and verify its lifecycle, ads, and release build."

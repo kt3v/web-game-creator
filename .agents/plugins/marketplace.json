@@ -1,0 +1,20 @@
+{
+  "name": "web-game-creator",
+  "interface": {
+    "displayName": "Web Game Creator"
+  },
+  "plugins": [
+    {
+      "name": "web-game-creator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/web-game-creator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
