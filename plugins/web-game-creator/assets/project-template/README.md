@@ -21,6 +21,8 @@ Requires Node.js 22.12+. Normal development does not load a portal SDK; `?poki=1
 
 ## Start a new game
 
+Choose where the game's concise idea note will live: Levelry or `game-notes/idea.md` in this repository. If Levelry is chosen, keep a small `game-notes/source.md` pointer with the board and idea document names so future sessions can find them. The `game-notes/` directory is not included in game builds.
+
 1. Change `config.id` and title in `src/app/config.ts`, the package name, and metadata in `index.html`.
 2. Add entities and mechanics in `src/game/game.ts`. PlayCanvas is initialized; the shell calls its update/render methods.
 3. Add your HUD and visual design in `src/ui/shell.ts` and `style.css`. Remove the `Game area` label once a scene is present.

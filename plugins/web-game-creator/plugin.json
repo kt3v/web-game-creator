@@ -1,21 +1,22 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "web-game-creator",
-  "version": "0.3.0",
-  "description": "Browser game starter template with pipeline, live marketplace art references, Poki SDK, and Levelry guidance.",
+  "version": "0.4.0",
+  "description": "Browser game starter template with pipeline, project notes, live marketplace art references, Poki SDK, and Levelry guidance.",
   "repository": "https://github.com/kt3v/web-game-creator",
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Web Game Creator",
         "shortDescription": "Build browser games from concept through polish",
-        "longDescription": "Includes a reusable PlayCanvas game template, development stage and live Poki art reference guidance, Poki SDK integration guidance, and a Levelry canvas connection for project documentation.",
+        "longDescription": "Includes a reusable PlayCanvas game template, development stages, concise project notes, live Poki art references, Poki SDK integration guidance, and a Levelry canvas connection.",
         "developerName": "kt3v",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
         "defaultPrompt": [
           "Create a browser game project from the bundled PlayCanvas template.",
           "Help me choose the right scope for this game's current development stage.",
+          "Turn my game idea into a concise living project note.",
           "Use the current Poki homepage to guide this game's marketplace thumbnail.",
           "Use the Levelry canvas to organize this game's documentation."
         ]
