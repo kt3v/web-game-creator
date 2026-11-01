@@ -9,6 +9,8 @@ codex plugin marketplace add kt3v/web-game-creator
 codex plugin add web-game-creator@web-game-creator
 ```
 
+The GitHub repository is private, so each client needs Git access to the `kt3v` account or another account granted access to the repository.
+
 The marketplace can also be opened from the Codex plugin directory after adding this repository as a source. Refresh the marketplace after future updates with `codex plugin marketplace upgrade web-game-creator`.
 
 The Levelry MCP endpoint is declared in the plugin's `mcp.json`. The connection does not include credentials; complete any authentication requested by your Codex client. Installing the plugin does not create or change a Levelry project.
