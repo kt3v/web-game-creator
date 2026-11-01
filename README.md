@@ -33,9 +33,11 @@ The Levelry MCP endpoint is declared in the plugin's `mcp.json`. The connection 
 
 ## Start a game from the template
 
-Copy `plugins/web-game-creator/assets/project-template/` to a new project directory, then follow its `README.md`. Keep the copied `AGENTS.md` with the new game so Codex can use the template's architecture and verification rules. The template is a standalone project with separate local, Poki, and Yoola builds.
+Open an empty directory as a Codex project and ask: "Use `$game-init` to initialize a new game here." Codex copies the template bundled with the installed plugin, names the new project, installs dependencies, and checks it. No separate template download or repository clone is needed.
 
-The pipeline skill distinguishes proof of concept, full game production, and polish so work stays appropriate to the game's current stage. The plugin does not automatically create game projects or publish games to a portal.
+You can also copy `plugins/web-game-creator/assets/project-template/` manually to a new project directory and follow its `README.md`. Keep the copied `AGENTS.md` so Codex can use the template's architecture and verification rules. The template is a standalone project with separate local, Poki, and Yoola builds.
+
+The pipeline skill distinguishes proof of concept, full game production, and polish so work stays appropriate to the game's current stage. Initialization does not publish a game to a portal.
 
 `game-project-notes` keeps a concise game idea and optional playtest results in Levelry or in the copied project's `game-notes/` directory. When Levelry is chosen, the board and idea document names are saved in project memory so later tasks can return to them.
 
@@ -47,7 +49,7 @@ When marketplace artwork is needed, `poki-art-reference` directs Codex to captur
 .agents/plugins/marketplace.json       Codex marketplace entry
 plugins/web-game-creator/plugin.json   Plugin identity and display metadata
 plugins/web-game-creator/mcp.json      Levelry MCP endpoint
-plugins/web-game-creator/skills/       Pipeline, notes, art, Poki SDK, and Levelry guidance
+plugins/web-game-creator/skills/       Initialization, pipeline, notes, art, Poki SDK, and Levelry guidance
 plugins/web-game-creator/assets/       Copyable game template
 references/                             Future reference material
 data/                                   Future project data
