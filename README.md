@@ -1,6 +1,6 @@
 # Web Game Creator
 
-A Codex plugin starter for building browser games. This repository currently bundles a PlayCanvas + TypeScript + Vite game template, the `game-pipeline`, `poki-sdk`, and `levelry-mcp` skills, and a Levelry MCP connection. More design, asset, and UI guidance can be added later.
+A Codex plugin starter for building browser games. This repository currently bundles a PlayCanvas + TypeScript + Vite game template, the `game-pipeline`, `poki-art-reference`, `poki-sdk`, and `levelry-mcp` skills, and a Levelry MCP connection. More design, asset, and UI guidance can be added later.
 
 ## Install in Codex
 
@@ -21,13 +21,15 @@ Copy `plugins/web-game-creator/assets/project-template/` to a new project direct
 
 The pipeline skill distinguishes proof of concept, full game production, and polish so work stays appropriate to the game's current stage. The plugin does not automatically create game projects or publish games to a portal.
 
+When marketplace artwork is needed, `poki-art-reference` directs Codex to capture the current Poki homepage grid for that game and use it to shape an original thumbnail, cover, or icon. No marketplace screenshots are bundled with the plugin.
+
 ## Repository layout
 
 ```text
 .agents/plugins/marketplace.json       Codex marketplace entry
 plugins/web-game-creator/plugin.json   Plugin identity and display metadata
 plugins/web-game-creator/mcp.json      Levelry MCP endpoint
-plugins/web-game-creator/skills/       Pipeline, Poki SDK, and Levelry guidance
+plugins/web-game-creator/skills/       Pipeline, art, Poki SDK, and Levelry guidance
 plugins/web-game-creator/assets/       Copyable game template
 references/                             Future reference material
 data/                                   Future project data
