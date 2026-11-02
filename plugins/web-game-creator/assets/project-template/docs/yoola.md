@@ -50,6 +50,8 @@ The whole ad transaction blocks gameplay, input, and sound until its promise set
 
 ## Pre-submission checks
 
+The browser suites below are for affected platform behavior and release preparation. Do not run the full matrix after each small gameplay change.
+
 `npm test`, `npm run test:browser`, and `npm run test:yoola` check Poki and Yoola invariants. Yoola browser tests check the production bundle, SDK/readiness ordering, cloud loading and writing, initial and changing mute, frame/render/input suspension, absence of Page Visibility and Resume ads, SDK/cloud errors, and mobile layout. Screenshots are saved in `test-results/yoola/`.
 
 These checks use a mock SDK and are not Yoola certification. Before publishing, run the real build in the [SDK Test Suite](https://games.yoola.app/tester) and staging, verify real cloud data and ads, and complete Yoola review. A full official `ytgame.d.ts` is provided by a Yoola manager; code here declares only the API subset used by the template.

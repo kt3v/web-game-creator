@@ -82,8 +82,9 @@ beside or above it, and no core progression gated behind videos.
   Blocked/incognito storage must leave a playable in-memory session.
 - Prevent arrows/Space/wheel from scrolling the parent host page while retaining
   internal game-panel scrolling. Use overscroll containment where appropriate.
-- Verify 16:9 iframe sizes (640×360, 836×470, 1031×580), desktop and mobile/tablet
-  controls. Landscape-only is valid when that is the project's chosen orientation.
+- Before submission, review 16:9 iframe sizes (640×360, 836×470, 1031×580)
+  and desktop and mobile/tablet controls. During development, inspect only affected
+  layouts. Landscape-only is valid when that is the project's chosen orientation.
   Do not add portrait adaptation against repository/user instructions.
 - Support Escape or Space pause/resume for keyboard games while respecting
   controls that already consume those keys. Keep intros skippable when applicable.
@@ -101,12 +102,15 @@ the SDK's automatic ad analytics. Missing or throwing measure must not affect pl
 
 ## Focused verification and handoff
 
-Use a mocked SDK to check ordered lifecycle, a held commercial promise, duplicate
-input, input/audio/simulation blocking, ad rejection, hidden-tab completion and
-SDK/storage failure. Inspect actual affected screens in the repository's required
-desktop/mobile orientations. Run its build and only tests relevant to the change.
-Verify the Poki production build loads at its deployed path with bundled assets
-and without development tools. A mock is not real ad certification.
+For a change to Poki integration, select the specific invariant at risk: lifecycle
+order, a held commercial promise, duplicate input, input/audio/simulation blocking,
+ad rejection, hidden-tab completion, or SDK/storage failure. Reuse existing mocked
+SDK coverage and add only a missing critical case; this list is not a mandate to
+write a test for every scenario on every task. Run the smallest relevant check
+once after the change. Inspect only affected screens and orientations during
+development. Before submission, verify the Poki production build at its deployed
+path with bundled assets and without development tools, and perform the broader
+device review. A mock is not real ad certification.
 
 Document build/test commands, event placements and deliberate omissions. Distinguish
 local verification from Poki Inspector and platform QA; never claim acceptance.

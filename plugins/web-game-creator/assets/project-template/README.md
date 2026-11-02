@@ -35,11 +35,19 @@ Graphics controls the PlayCanvas pixel ratio; reduced motion is passed to the vi
 
 Engine documentation: [AppBase](https://api.playcanvas.com/engine/classes/AppBase.html).
 
+Use the smallest check relevant to a change. The tests below protect critical platform, state, and save behavior; they are not a checklist for every task. A proof of concept usually needs only a quick play check or one focused check. Run the browser suites for changes they cover or for release preparation, not after every small feature. See [AGENTS.md](AGENTS.md) for the testing rules.
+
 ```sh
-npm test               # Critical state, SDK, and save invariants
+npm run check          # Type check when code changes call for it
 npm run build          # Standalone build
 npm run build:poki     # Poki build in dist/
 npm run build:yoola    # Yoola / YouTube Playables build in dist/
+```
+
+Run the following only when their coverage matches the change or while preparing a release:
+
+```sh
+npm test               # Critical state, SDK, and save invariants
 npx playwright install chromium
 npm run test:browser   # Poki build, mock SDK, and shell screenshots
 npm run test:yoola     # Yoola build, mock SDK, and shell screenshots

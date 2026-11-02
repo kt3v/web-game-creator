@@ -7,6 +7,12 @@ description: Scope browser game development by stage: proof of concept, full gam
 
 Use the project's stated stage to decide how much gameplay, content, art, and interface work belongs in the current task. Infer the stage from project notes and the user's request when possible. If uncertainty would change the work materially, ask the user which stage the game is in. Record the confirmed stage in project memory when that memory exists and its maintenance is authorized; follow the project's documentation rules for any write. Do not silently promote a project to the next stage.
 
+## Testing discipline at every stage
+
+Create an automated test only when it protects an important behavior that is likely to regress and would be costly to catch by ordinary play. State the failure it should detect before adding it. Prefer a few representative, observable checks for core state, input, saves, ads, SDK boundaries, and serious regressions. Reuse or adjust an existing test when it already covers the risk. Do not add tests for every function, UI action, content variant, or implementation detail; do not grow a suite just to increase its test count or coverage percentage.
+
+Choose the smallest check that answers the task's actual question. A type check, one focused test, or a brief manual play check may be enough; a documentation or other low-risk change may need no runtime check. Run a relevant check once after the change, and rerun it only after a fix or a new finding. Do not run every unit, browser, and platform suite by habit. Reserve broad regression, browser matrices, and release checks for cross-cutting changes, meaningful milestones, concrete failures, or release preparation. When the user requests specific verification, follow that scope.
+
 ## 1. Proof of concept
 
 Prove the core gameplay and resolve uncertainty about the mechanics as quickly as possible. A developer-only playable build is enough. Implement only the controls, feedback, and content needed to test the core loop. Do not spend time on a complete interface, tutorials, explanatory labels, finished content, or release presentation unless they are necessary to evaluate the mechanic.
@@ -15,7 +21,7 @@ Keep the implementation suitable for continued development: respect the existing
 
 Use low-cost visuals that still suggest the intended art direction. Simple 3D primitives and rough 2D sprites are appropriate; detailed asset production and UI styling are not priorities.
 
-Verify a small change with the smallest check that shows its mechanic works. A quick developer play check or one focused test is often enough; some low-risk edits need no new automated test. Do not create a Playwright suite, run a broad regression, capture a device screenshot matrix, or treat every microfeature as a release candidate. Use browser automation only when the behavior being changed actually needs it. Expand checks for a concrete failure, a risky change to state, input, saves, ads, or an SDK, or an explicit user request.
+For a small mechanic, a quick developer play check is usually enough. Do not create a Playwright suite, capture a device screenshot matrix, or treat every microfeature as a release candidate. Use browser automation only when the affected behavior needs a browser to verify it.
 
 ## 2. Full game production
 

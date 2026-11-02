@@ -30,6 +30,8 @@ Attempts and lifecycle are separate events; pause/resume does not send another a
 
 ## Local checks and submission
 
+Run these browser checks when Poki behavior or the affected shell flow changes, or during release preparation. For a small unrelated change, use the smallest relevant check instead.
+
 `npm run test:browser` substitutes the SDK via browser network interception, holds the ad promise, and checks locks, mute, deduplication, results, and saves. These test hooks are absent from `dist/`. Unit tests also cover hidden completion, startup failure, and rewarded ads.
 
 Checks include a nested `/games/starter/` path, desktop/mobile/tablet, and 640×360, 836×470, and 1031×580 iframes. Automated tests do not prove real ads or Poki acceptance.
