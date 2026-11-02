@@ -34,7 +34,7 @@
 - Support portrait and landscape by default. If a game chooses one orientation, set `config.orientation` and honor it.
 - Auto/Desktop/Touch is an input and UI mode, not game state. Tablets need Touch regardless of width.
 - Check safe areas, settings panel scrolling, focus, and keyboard navigation. Do not intercept keys used by form controls.
-- After UI changes, inspect real browser screenshots of affected screens in desktop landscape and mobile portrait and landscape, or the game's chosen orientation. Fix clipping, overlap, and inaccessible controls. Code tests do not replace visual inspection.
+- During full production and polish, visually check affected UI and controls at the relevant desktop and mobile sizes when the change calls for it. During proof of concept, inspect only what is needed to confirm the current mechanic; do not run a routine screenshot matrix.
 
 ## Poki
 - Check the official documentation linked in `docs/poki.md` before changing the SDK integration.
@@ -49,8 +49,8 @@
 ## Verification and scope
 - Yoola has a separate `build:yoola` with the YouTube Playables SDK; rules and sources are in `docs/yoola.md`. The Poki SDK is absent from that build.
 - Load the Yoola SDK before game code. Host pause/resume comes only from its SDK and also stops rendering/RAF; Page Visibility and blur must not compete with it.
-- In Playables, data goes through `SaveStore` and the cloud SDK, without localStorage. Do not write to the cloud before a successful read; resuming the same content is not an interstitial opportunity. Check changes with `npm run test:yoola`.
-- Run checks relevant to the task; avoid broad regression and unnecessary tests for small edits.
-- Keep critical invariant checks for state, SDK, ads, saves, and input changes (`npm test`, `npm run test:browser`).
-- Before handing off the template, verify TypeScript/build, the main game path, and a brief visual check. Add checks when a new risk or failure warrants them.
+- In Playables, data goes through `SaveStore` and the cloud SDK, without localStorage. Do not write to the cloud before a successful read; resuming the same content is not an interstitial opportunity. Check affected Yoola behavior when changing this integration.
+- In proof of concept, use the smallest direct check that confirms the feature works. A brief manual play check or one focused test is enough for most mechanics. Do not add tests for every microfeature or routinely run Playwright, all browser sizes, or broad regression suites.
+- For changes to state, input, SDK, ads, or saves, verify the specific invariant at risk. Use `npm test`, `npm run test:browser`, or `npm run test:yoola` only when their coverage is relevant; a full suite is not an automatic gate for each task.
+- In full production and polish, broaden verification at meaningful milestones and before release. At every stage, report the checks actually performed without presenting a prototype as release-ready.
 - Production must exclude debug globals, editors, test overrides, and promotions. The test SDK belongs only in tests.

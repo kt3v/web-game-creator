@@ -15,7 +15,7 @@ Open a new, empty folder as a Codex project, start a chat, and say:
 
 > Initialize a new game here with `$game-init`.
 
-Codex brings in the bundled PlayCanvas, TypeScript, and Vite template, gives the project a name, installs dependencies, and checks that it works. You do not need to clone or copy the template yourself. The template needs Node.js 22.12 or newer.
+Codex brings in the bundled PlayCanvas, TypeScript, and Vite template, gives the project a name, installs dependencies, and runs a quick check. You do not need to clone or copy the template yourself. The template needs Node.js 22.12 or newer.
 
 ## What the plugin helps with
 
@@ -25,7 +25,7 @@ Turns an empty folder into a working game project. It keeps the starter lightwei
 
 ### Build at the right pace — [`game-pipeline`](plugins/web-game-creator/skills/game-pipeline/SKILL.md)
 
-Keeps a proof of concept focused on the core mechanic, then shifts toward a complete mobile-friendly game and finally visual polish. If the current stage is unclear, Codex can ask before taking the work too far.
+Keeps a proof of concept focused on the core mechanic and quick, minimal checks, then shifts toward a complete mobile-friendly game and finally visual polish. If the current stage is unclear, Codex can ask before taking the work too far.
 
 ### Keep the idea clear — [`game-project-notes`](plugins/web-game-creator/skills/game-project-notes/SKILL.md)
 

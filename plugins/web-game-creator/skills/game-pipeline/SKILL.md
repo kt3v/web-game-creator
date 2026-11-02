@@ -15,11 +15,15 @@ Keep the implementation suitable for continued development: respect the existing
 
 Use low-cost visuals that still suggest the intended art direction. Simple 3D primitives and rough 2D sprites are appropriate; detailed asset production and UI styling are not priorities.
 
+Verify a small change with the smallest check that shows its mechanic works. A quick developer play check or one focused test is often enough; some low-risk edits need no new automated test. Do not create a Playwright suite, run a broad regression, capture a device screenshot matrix, or treat every microfeature as a release candidate. Use browser automation only when the behavior being changed actually needs it. Expand checks for a concrete failure, a risky change to state, input, saves, ads, or an SDK, or an explicit user request.
+
 ## 2. Full game production
 
 Once the prototype is confirmed, develop it into a complete, coherent game. Finish the needed content and flows, and give UX deliberate attention. Design for mobile players first: keep controls and information clear on small screens.
 
 Keep UI restrained and stylish. Focus attention on important elements with hierarchy and contrast. Avoid dense panels and unnecessary instructional text. Give the UI a palette that contrasts with the game world, and choose fonts and text sizes for readability and character.
+
+As player-facing flows become complete, verify the affected experience on the devices it targets. Keep routine checks focused; reserve broader regression and platform review for meaningful milestones and release preparation.
 
 ## 3. Polish
 
